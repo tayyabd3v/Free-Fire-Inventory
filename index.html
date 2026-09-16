@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Fire Inventory || Aruro Arc</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- <input type="file" hidden width="100%" height="100%"> -->
+    <div class="ambient-glow ambient-glow-left"></div>
+    <div class="ambient-glow ambient-glow-right"></div>
+
+    <header class="topbar">
+        <a class="brand" href="index.html" aria-label="Battle Vault home">
+            <span class="brand-mark">FF</span>
+            <span class="brand-copy">
+                <strong>BATTLE VAULT</strong>
+                <small>ITEM VALUE</small>
+            </span>
+        </a>
+        <div class="status-chip"><span class="status-dot"></span> LIVE LOADOUT</div>
+    </header>
+
+    <div class="app-shell">
+        <div class="app-card">
+            <div class="hero-copy">
+                <p class="eyebrow">PLAYER INVENTORY<!-- / 01--></p>
+                <h1>Know the value of your <span>Vault.</span></h1>
+                <p class="hero-text">Track your prized items, total their diamond value, and keep your collection ready for the next drop.</p>
+            </div>
+
+            <div class="input-panel">
+                <div class="panel-heading">
+                    <div>
+                        <p class="section-kicker">ADD TO INVENTORY</p>
+                        <h2>Build your item list</h2>
+                    </div>
+                    <span id="userUIDForDisplay" class="panel-number"><!--01-->8292133641</span>
+                </div>
+                <div class="field-group">
+                    <label for="itemNameInp">Enter Item Name</label>
+                    <input type="text" class="itemInputs" id="itemNameInp" placeholder="Enter Item Name">
+                </div>
+
+                <div class="field-group">
+                    <label for="itemPriceInp">Enter Item Price (Diamonds)</label>
+                    <input type="text" class="itemInputs" id="itemPriceInp" placeholder="Enter Item Price">
+                </div>
+
+                <div class="actions-row">
+                    <input type="button" value="Add Item" id="addItemButton" onclick="handleFunctions()">
+                </div>
+            </div>
+
+            <div id="table-pannel" class="table-panel">
+                <table id="tableforItemNPDisplay" aria-label="Item price list"></table>
+            </div>
+
+            <div id="summary-pannel" class="summary-panel">
+                <div class="calculate-row">
+                    <button id="calculateSumOfPrice" type="button">Calculate Total</button>
+                </div>
+
+                <div class="summary-output">
+                    <div id="displaySumofCalculations" class="total-value"></div>
+                    <div id="forItemsNameTeller" class="item-summary"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="utility-dock utility-dock-left">
+        <input type="file" id="inputToImportFile" hidden>
+        <button id="buttonToImportFile"><span class="utility-icon">↓</span><span>Import</span></button>
+        <button id="buttonToExportFile"><span class="utility-icon">↑</span><span>Export</span></button>
+    </div>
+    <div class="utility-dock utility-dock-right">
+        <button id="buttonToEditPrimeDiamonds"><span class="utility-icon">◆</span><span>Edit Diamonds</span></button>
+        <a href="../main-otherWebs/index.html" target="_blank"><button type="button"><span class="utility-icon">↗</span><span>More Webs</span></button></a>
+    </div>
+
+    <footer class="site-footer">
+        <span class="footer-line"></span>
+        <p>This is an unofficial fan-made utility and is not affiliated with, endorsed by, or sponsored by Garena Free Fire.</p>
+        <span class="footer-line"></span>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
