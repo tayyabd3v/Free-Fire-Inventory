@@ -68,3 +68,251 @@ input[type='button'] { min-width: 160px; padding: 13px 22px; }
 .footer-line { flex: 1; height: 1px; background: var(--line); }
 @media (max-width: 980px) { .utility-dock { position: static; display: flex; justify-content: center; margin: 0 auto 10px; transform: none; } .utility-dock-left { margin-bottom: 8px; } .utility-dock-right { margin-bottom: 24px; } }
 @media (max-width: 620px) { .topbar { width: calc(100% - 28px); padding-top: 20px; } .status-chip { display: none; } .app-shell { width: calc(100% - 28px); margin-top: 28px; } .app-card { padding: 24px 16px; } .app-card::before { left: 16px; } h1 { font-size: clamp(2.8rem, 15vw, 4.2rem); } .input-panel, .summary-panel { padding: 18px; } .actions-row, .calculate-row { justify-content: stretch; } input[type='button'], #calculateSumOfPrice { width: 100%; min-width: 0; } .utility-dock button { flex: 1; justify-content: center; } .utility-dock { width: calc(100% - 28px); } .site-footer { width: calc(100% - 28px); align-items: stretch; flex-direction: column; gap: 10px; } }
+
+/* Chrome, Edge, Safari */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+/* Responsive vault layout */
+:root {
+    --surface-card: rgba(16, 20, 25, .94);
+    --surface-panel: rgba(23, 28, 34, .92);
+    --focus-ring: rgba(255, 181, 45, .2);
+}
+
+button:focus-visible,
+input:focus-visible,
+.brand:focus-visible,
+#userUIDForDisplay:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+}
+
+.app-card {
+    border-radius: 4px;
+    background: var(--surface-card);
+}
+
+.input-panel,
+.table-panel,
+.summary-panel {
+    border-radius: 3px;
+    background: var(--surface-panel);
+}
+
+.panel-number {
+    max-width: 45%;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+}
+
+.itemInputs {
+    border-radius: 2px;
+}
+
+.itemInputs:focus {
+    box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+.table-panel {
+    scrollbar-width: thin;
+}
+
+#tableforItemNPDisplay th,
+#tableforItemNPDisplay td {
+    white-space: nowrap;
+}
+
+.utility-dock button {
+    border-radius: 2px;
+}
+
+@media (max-width: 980px) {
+    .app-shell {
+        margin-top: 34px;
+    }
+
+    .utility-dock {
+        width: min(760px, calc(100% - 40px));
+        flex-wrap: wrap;
+    }
+
+    .utility-dock button {
+        min-height: 42px;
+    }
+}
+
+@media (max-width: 620px) {
+    body {
+        min-width: 320px;
+    }
+
+    .topbar,
+    .app-shell,
+    .site-footer,
+    .utility-dock {
+        width: calc(100% - 32px);
+    }
+
+    .topbar {
+        padding-top: 18px;
+    }
+
+    .brand {
+        gap: 9px;
+    }
+
+    .brand-mark {
+        width: 38px;
+        height: 38px;
+        font-size: 1.15rem;
+    }
+
+    .brand-copy strong {
+        font-size: 1.05rem;
+    }
+
+    .brand-copy small {
+        font-size: .6rem;
+        letter-spacing: .14em;
+    }
+
+    .app-shell {
+        margin-top: 26px;
+    }
+
+    .app-card {
+        padding: 24px 14px;
+    }
+
+    .app-card::before {
+        left: 14px;
+        width: 92px;
+    }
+
+    .hero-copy {
+        margin-bottom: 24px;
+    }
+
+    h1 {
+        font-size: clamp(2.8rem, 14vw, 4.2rem);
+        line-height: .88;
+    }
+
+    .hero-text {
+        font-size: .95rem;
+    }
+
+    .input-panel,
+    .summary-panel {
+        gap: 16px;
+        padding: 16px;
+    }
+
+    .panel-heading {
+        gap: 12px;
+        padding-bottom: 15px;
+    }
+
+    h2 {
+        font-size: 1.45rem;
+    }
+
+    .panel-number {
+        font-size: .85rem;
+        text-align: right;
+    }
+
+    label {
+        font-size: .7rem;
+    }
+
+    .itemInputs {
+        min-height: 48px;
+        padding: 13px 14px;
+    }
+
+    input[type='button'],
+    #calculateSumOfPrice {
+        min-height: 48px;
+    }
+
+    .table-panel {
+        margin-top: 14px;
+        padding: 8px;
+    }
+
+    #tableforItemNPDisplay th,
+    #tableforItemNPDisplay td {
+        padding: 12px 9px;
+        font-size: .88rem;
+    }
+
+    .summary-panel {
+        margin-top: 14px;
+    }
+
+    .total-value {
+        font-size: 2.7rem;
+    }
+
+    .item-summary {
+        font-size: .9rem;
+    }
+
+    .utility-dock {
+        gap: 8px;
+        margin-bottom: 10px;
+    }
+
+    .utility-dock button {
+        flex: 1 1 calc(50% - 4px);
+        min-width: 0;
+        padding: 10px 8px;
+        font-size: .64rem;
+    }
+
+    .site-footer {
+        margin-bottom: 20px;
+        font-size: .68rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .app-card {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .app-card::before {
+        left: 10px;
+    }
+
+    .input-panel,
+    .summary-panel {
+        padding: 13px;
+    }
+
+    .panel-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .panel-number {
+        max-width: 100%;
+        text-align: left;
+    }
+
+    .utility-dock button {
+        flex-basis: 100%;
+    }
+}
